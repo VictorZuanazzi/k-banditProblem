@@ -36,10 +36,13 @@ class Proportional_exploration(Agent):
     
     def chooseAction(self):
         self.update_probabilities()
+        action = 0
         while True:
-            action = np.random.randint(0,self.k)
-            if (np.random.uniform(0,1) < self.probabilities[action]):
-                return action
+            odds = 0
+            for action in range(self.k):
+                odds += self.probabilities[action]
+                if (np.random.uniform(0,1) < odds):
+                    return action
     
 if __name__ == '__main__':
     k =10

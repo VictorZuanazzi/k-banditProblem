@@ -10,7 +10,7 @@ class K_Bandit:
 
 	def __init__(self, k):
 			
-		self.std = 0.1
+		self.std = 1
 		self.k = k
 		# This ensures that each agent will play against the same k-armed
 		# bandit and that each bandit plays the same sequence of moves 
